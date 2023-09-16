@@ -8,7 +8,7 @@ import {
   } from "@material-tailwind/react";
 import { useState } from "react";
    
-export const MyCard = ({title,description,price,thumbnail})=> {
+export const MyCard = ({title,description,price,thumbnail, id})=> {
     const [hide,setHide] = useState(true)
     return (
       <Card className="mx-auto mt-6 w-[95%]">
