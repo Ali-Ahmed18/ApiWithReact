@@ -7,14 +7,13 @@ import {
 import logo from "../assets/images-removebg-preview.png"
 import { useEffect, useState } from "react";
 
-export const MyNavbar = ({filterItem}) => {
-  const [search, setSearch] = useState("")
+export const MyNavbar = ({onSearch}) => {
 
-
+   const [search, setSearch] = useState("")
     const filterProducts = ()=>{
         search ? fetch(`https://dummyjson.com/products/search?q=${search}`)
         .then((res)=> res.json()
-        .then((json)=> filterItem(json.products)))
+        .then((json)=> onSearch(json.products)))
         .catch((err)=> console.log(err))
          : false
     }

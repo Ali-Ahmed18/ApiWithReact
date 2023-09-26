@@ -6,11 +6,13 @@ import {
     Typography,
     Button,
   } from "@material-tailwind/react";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
    
 export const MyCard = ({title,description,price,thumbnail, id})=> {
-    const [hide,setHide] = useState(true)
+
     return (
+
+    <NavLink to={`./item/${id}`}>
       <Card className="mx-auto mt-6 w-[95%]">
         <CardHeader color="white" className="relative h-56">
           <img
@@ -20,19 +22,18 @@ export const MyCard = ({title,description,price,thumbnail, id})=> {
           />
         </CardHeader>
         <CardBody>
-          <Typography variant="h5" color="blue-gray" className="mb-2">
+          <Typography variant="h5" color="blue-gray" className="mb-2 line-clamp-1">
             {title}
           </Typography>
-          <Typography className={hide ? "line-clamp-2" : ""}>
+          <Typography className="line-clamp-2">
             {description}
           </Typography>
           <Typography variant="h5" color="blue-gray" className="mb-2">
             Rs {price}$
           </Typography>
         </CardBody>
-        <CardFooter className="pt-0">
-          <Button onClick={()=> setHide(!hide)}>{hide ? "Read More" : "Read Less"}</Button>
-        </CardFooter>
       </Card>
+      </NavLink>
+
     );
   }

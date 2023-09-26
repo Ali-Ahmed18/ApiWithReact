@@ -3,10 +3,8 @@ import {
     Card,
     CardHeader,
     CardBody,
-    CardFooter,
-    Typography,
-    Button,
   } from "@material-tailwind/react";
+
 
 function CardSkeleton() {
   return (
@@ -18,9 +16,7 @@ function CardSkeleton() {
         <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-[95%] mb-3 animate-pulse"></div>
         <div className="h-5 bg-gray-300 rounded-full dark:bg-gray-600 w-[30%] animate-pulse"></div>
         </CardBody>
-        <CardFooter className="pt-0">
-        <div className="h-10 bg-gray-300 rounded dark:bg-gray-600 w-32 animate-pulse"></div>
-        </CardFooter>
+    
       </Card>
   )
 }
